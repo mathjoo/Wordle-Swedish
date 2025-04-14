@@ -1,21 +1,35 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
 
 public class Main {
+
+    static ArrayList<String> list = new ArrayList<>();
+
+    static ArrayList<String> read() throws Exception {
+        File file = new java.io.File("fem_bokstaver.txt");
+        java.util.Scanner fileScanner = new java.util.Scanner(file);
+
+        // Read the file and add each line to the list
+
+        while (fileScanner.hasNextLine()) {
+            list.add(fileScanner.nextLine().trim());
+        }
+        fileScanner.close();
+        return list;
+    }
+
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Banan");
-        list.add("Bilar");
-        list.add("Cykel");
-        list.add("Drake");
-        list.add("Ekorre");
-        list.add("Fiske");
-        list.add("Glada");
-        list.add("Husky");
-        list.add("Jolle");
-        list.add("Knapp");
+        try {
+            ArrayList<String> list = read();
+        } catch (Exception e) {
+            System.out.println("Filen hittades inte!");
+        }
+
 
         int ran = (int) (Math.random() * list.size());
         String word = list.get(ran);
+        System.out.println(word);
 
         // read a five letter word from terminal
         java.util.Scanner scanner = new java.util.Scanner(System.in);
