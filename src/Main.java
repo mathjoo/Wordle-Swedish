@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
@@ -7,8 +9,8 @@ public class Main {
     static ArrayList<String> list = new ArrayList<>();
 
     static ArrayList<String> read() throws Exception {
-        File file = new java.io.File("fem_bokstaver.txt");
-        java.util.Scanner fileScanner = new java.util.Scanner(file);
+        File file = new java.io.File("../lib/fem_bokstaver.txt");
+        java.util.Scanner fileScanner = new Scanner(file);
 
         // Read the file and add each line to the list
 
@@ -19,13 +21,8 @@ public class Main {
         return list;
     }
 
-    public static void main(String[] args) {
-        try {
-            ArrayList<String> list = read();
-        } catch (Exception e) {
-            System.out.println("Filen hittades inte!");
-        }
-
+    public static void main(String[] args) throws Exception {
+        ArrayList<String> list = read();
 
         int ran = (int) (Math.random() * list.size());
         String word = list.get(ran);
