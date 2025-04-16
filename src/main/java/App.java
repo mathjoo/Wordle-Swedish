@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,7 +23,9 @@ public class App extends Application {
     primaryStage.setScene(scene);
     primaryStage.show();
   } catch (IOException e) {
+    e.printStackTrace();
   }
+
 
     }
  
