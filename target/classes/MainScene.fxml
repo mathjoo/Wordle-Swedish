@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <children>
+      <VBox alignment="CENTER" layoutX="105.0" layoutY="49.0" spacing="10.0">
+         <!-- Row 1 -->
+         <HBox alignment="CENTER" spacing="10.0">
+               <Label fx:id="label00" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label01" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label02" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label03" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label04" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+         </HBox>
+
+         <!-- Row 2 -->
+         <HBox alignment="CENTER" spacing="10.0">
+               <Label fx:id="label10" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label11" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label12" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label13" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label14" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+         </HBox>
+
+         <!-- Row 3 -->
+         <HBox alignment="CENTER" spacing="10.0">
+               <Label fx:id="label20" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label21" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label22" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label23" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label24" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+         </HBox>
+
+         <!-- Row 4 -->
+         <HBox alignment="CENTER" spacing="10.0">
+               <Label fx:id="label30" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label31" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label32" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label33" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label34" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+         </HBox>
+
+         <!-- Row 5 -->
+         <HBox alignment="CENTER" spacing="10.0">
+               <Label fx:id="label40" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label41" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label42" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label43" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label44" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+         </HBox>
+
+         <!-- Row 6 -->
+         <HBox alignment="CENTER" spacing="10.0">
+               <Label fx:id="label50" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label51" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label52" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label53" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+               <Label fx:id="label54" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Label>
+         </HBox>
+      </VBox>
+      
+      <HBox alignment="CENTER" layoutY="570.0" prefHeight="60.0" prefWidth="600.0" spacing="6.0">
+         <children>
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Q" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="W" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="E" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="R" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="T" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Y" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="U" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="I" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="O" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="P" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Å" />
+         </children>
+      </HBox>
+
+<!-- Middle row: ASDFGHJKLÖÄ -->
+      <HBox alignment="CENTER" layoutY="636.0" prefHeight="60.0" prefWidth="600.0" spacing="6.0">
+         <children>
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="A" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="S" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="D" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="F" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="G" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="H" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="J" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="K" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="L" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Ö" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Ä" />
+         </children>
+      </HBox>
+
+<!-- Bottom row: ENTER ZXCVBNM BACK -->
+      <HBox alignment="CENTER" layoutY="702.0" prefHeight="60.0" prefWidth="600.0" spacing="6.0">
+         <children>
+            <Button onAction="#handleEnter" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⏎" /> 
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Z" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="X" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="C" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="V" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="B" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="N" />
+            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="M" />
+            <Button onAction="#handleBackspace" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⌫" /> <!-- Backspace key -->
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
