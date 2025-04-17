@@ -232,5 +232,6 @@
             <Button onAction="#handleBackspace" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⌫" /> <!-- Backspace key -->
          </children>
       </HBox>
+      <Label fx:id="messageLabel" layoutX="109.0" layoutY="9.0" prefHeight="29.0" prefWidth="382.0" />
    </children>
 </AnchorPane>

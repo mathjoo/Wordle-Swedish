@@ -1,9 +1,14 @@
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
+
 
 public class MainSceneController {
 
@@ -19,10 +24,16 @@ public class MainSceneController {
     private Label label40, label41, label42, label43, label44;
     @FXML
     private Label label50, label51, label52, label53, label54;
+    @FXML
+    private Label messageLabel;
+
+
 
     private Label[][] board = new Label[6][5];
     private int currentRow = 0;
     private int currentCol = 0;
+    private WordCheck wc;
+    private String hiddenWord;
 
     @FXML
     public void initialize() {
@@ -32,6 +43,12 @@ public class MainSceneController {
         board[3][0] = label30; board[3][1] = label31; board[3][2] = label32; board[3][3] = label33; board[3][4] = label34;
         board[4][0] = label40; board[4][1] = label41; board[4][2] = label42; board[4][3] = label43; board[4][4] = label44;
         board[5][0] = label50; board[5][1] = label51; board[5][2] = label52; board[5][3] = label53; board[5][4] = label54;
+        try {
+            wc = new WordCheck();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        hiddenWord = wc.getWord().toLowerCase();
     }
 
     @FXML
@@ -54,11 +71,59 @@ public class MainSceneController {
 
     @FXML
     private void handleEnter(ActionEvent event) {
-        if (currentCol == 5) {
-            // TODO: KOLLA ORDET ÄR RÄTT
-            currentRow++;
-            currentCol = 0;
+    if (currentCol == 5) {
+        StringBuilder guessBuilder = new StringBuilder();
+        for (int i = 0; i < 5; i++) {
+            guessBuilder.append(board[currentRow][i].getText());
+        }
+
+        String guessedWord = guessBuilder.toString().toLowerCase();
+
+        if (!WordCheck.getList().contains(guessedWord)) {
+            messageLabel.setText("Inte ett riktigt ord. Försök igen!");
+            return;
+        }
+
+        if (guessedWord.equals(hiddenWord)) {
+            messageLabel.setText("Rätt ord! Bra jobbat!");
+            // Add a small delay to change the color
+            applyColorWithDelay(currentRow, true);
+        } else {
+            applyColorWithDelay(currentRow, false); // false means incorrect guess
+            messageLabel.setText("Fel ord, försök igen!");
+        }
+
+        currentRow++;
+        currentCol = 0;
+    }
+    if (currentRow == 6) {
+        messageLabel.setText(hiddenWord);
+    }
+}
+
+    private void applyColorWithDelay(int row, boolean correctGuess) {
+        for (int i = 0; i < 5; i++) {
+            final int col = i;
+
+            PauseTransition pause = new PauseTransition(Duration.seconds(0.5 * (col + 1)));
+
+            pause.setOnFinished(e -> {
+                String letter = board[row][col].getText().toLowerCase();
+
+                if (correctGuess) {
+                    board[row][col].setStyle("-fx-background-color: #6aaa64; -fx-text-fill: white;");
+                } else {
+                    if (letter.equals(String.valueOf(hiddenWord.charAt(col)))) {
+                        board[row][col].setStyle("-fx-background-color: #6aaa64; -fx-text-fill: white;");
+                    } else if (hiddenWord.contains(letter)) {
+                        board[row][col].setStyle("-fx-background-color: #c9b458; -fx-text-fill: white;");
+                    } else {
+                        board[row][col].setStyle("-fx-background-color: #787c7e; -fx-text-fill: white;");
+                    }
+                }
+            });
+
+            pause.play();
         }
     }
-
 }

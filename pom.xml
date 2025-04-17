@@ -28,6 +28,14 @@
         </dependency>
     </dependencies>
 
+    <pluginRepositories>
+    <pluginRepository>
+        <id>oss.sonatype.org</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+    </pluginRepositories>
+
+
     <build>
         <plugins>
             <!-- JavaFX Run Configuration -->
@@ -36,7 +44,8 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>App</mainClass> <!-- Change if your App.java has a package -->
+                    <mainClass>App</mainClass>
+                    <classpathScope>runtime</classpathScope> <!-- Change if your App.java has a package -->
                 </configuration>
             </plugin>
         </plugins>
