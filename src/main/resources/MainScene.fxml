@@ -187,49 +187,49 @@
       
       <HBox alignment="CENTER" layoutY="570.0" prefHeight="60.0" prefWidth="600.0" spacing="6.0">
          <children>
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Q" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="W" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="E" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="R" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="T" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Y" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="U" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="I" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="O" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="P" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Å" />
+            <Button fx:id="buttonQ" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Q" />
+            <Button fx:id="buttonW" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="W" />
+            <Button fx:id="buttonE" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="E" />
+            <Button fx:id="buttonR" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="R" />
+            <Button fx:id="buttonT" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="T" />
+            <Button fx:id="buttonY" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Y" />
+            <Button fx:id="buttonU" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="U" />
+            <Button fx:id="buttonI" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="I" />
+            <Button fx:id="buttonO" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="O" />
+            <Button fx:id="buttonP" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="P" />
+            <Button fx:id="buttonÅ" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Å" />
          </children>
       </HBox>
 
 <!-- Middle row: ASDFGHJKLÖÄ -->
       <HBox alignment="CENTER" layoutY="636.0" prefHeight="60.0" prefWidth="600.0" spacing="6.0">
          <children>
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="A" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="S" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="D" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="F" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="G" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="H" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="J" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="K" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="L" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Ö" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Ä" />
+            <Button fx:id="buttonA" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="A" />
+            <Button fx:id="buttonS" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="S" />
+            <Button fx:id="buttonD" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="D" />
+            <Button fx:id="buttonF" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="F" />
+            <Button fx:id="buttonG" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="G" />
+            <Button fx:id="buttonH" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="H" />
+            <Button fx:id="buttonJ" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="J" />
+            <Button fx:id="buttonK" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="K" />
+            <Button fx:id="buttonL" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="L" />
+            <Button fx:id="buttonÖ" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Ö" />
+            <Button fx:id="buttonÄ" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Ä" />
          </children>
       </HBox>
 
 <!-- Bottom row: ENTER ZXCVBNM BACK -->
       <HBox alignment="CENTER" layoutY="702.0" prefHeight="60.0" prefWidth="600.0" spacing="6.0">
          <children>
-            <Button onAction="#handleEnter" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⏎" /> 
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Z" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="X" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="C" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="V" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="B" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="N" />
-            <Button onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="M" />
-            <Button onAction="#handleBackspace" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⌫" /> <!-- Backspace key -->
+            <Button fx:id="buttonEnter" onAction="#handleEnter" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⏎" /> 
+            <Button fx:id="buttonZ" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Z" />
+            <Button fx:id="buttonX" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="X" />
+            <Button fx:id="buttonC" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="C" />
+            <Button fx:id="buttonV" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="V" />
+            <Button fx:id="buttonB" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="B" />
+            <Button fx:id="buttonN" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="N" />
+            <Button fx:id="buttonM" onAction="#handleLetterInput" prefHeight="60.0" prefWidth="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="M" />
+            <Button fx:id="buttonBackSpace" onAction="#handleBackspace" prefHeight="60.0" prefWidth="73.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="⌫" /> <!-- Backspace key -->
          </children>
       </HBox>
       <Label fx:id="messageLabel" layoutX="109.0" layoutY="9.0" prefHeight="29.0" prefWidth="382.0" />
