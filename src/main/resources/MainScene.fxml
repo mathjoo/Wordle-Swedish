@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
@@ -143,11 +144,14 @@
                      <Font size="30.0" />
                   </font>
                </Label>
-               <Label fx:id="label43" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
-                  <font>
-                     <Font size="30.0" />
-                  </font>
-               </Label>
+               <StackPane prefHeight="70.0" prefWidth="70.0">
+                  <Label fx:id="label43" alignment="CENTER"  contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cheatButton" text="Visa Ord" onAction="#handleCheat" opacity="0.0" style="-fx-border-color: transparent;" />
+               </StackPane>
                <Label fx:id="label44" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black;">
                   <font>
                      <Font size="30.0" />
@@ -233,5 +237,9 @@
          </children>
       </HBox>
       <Label fx:id="messageLabel" layoutX="109.0" layoutY="9.0" prefHeight="29.0" prefWidth="382.0" />
+
+
    </children>
 </AnchorPane>
+
+
