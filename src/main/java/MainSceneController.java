@@ -159,21 +159,22 @@ public class MainSceneController {
                 messageLabel.setText("Ordet finns inte i vår ordbank. Försök igen!");
                 return;
             }
-            if (guessedWord.equals(hiddenWord)) {
-                messageLabel.setText("Rätt ord! Bra jobbat!");
-                // Add a small delay to change the color
-                applyColorWithDelay(currentRow, true, guessedWord);
-            } else {
-                applyColorWithDelay(currentRow, false, guessedWord);
-
-                if (currentRow == 5) { // sista raden!
+            messageLabel.setText("");
+            applyColorWithDelay(currentRow, false, guessedWord);
+            PauseTransition pause = new PauseTransition(Duration.seconds(3));
+            pause.setOnFinished(e -> {
+                if (guessedWord.equals(hiddenWord)) {
+                    messageLabel.setText("Rätt ord! Bra jobbat!");
+                } else if (currentRow == 5) {
                     messageLabel.setText("Du förlorade! Rätt ord var: " + hiddenWord.toUpperCase());
                 } else {
                     messageLabel.setText("Fel ord, försök igen!");
                 }
-            }
-            currentRow++;
-            currentCol = 0;
+
+                currentRow++;
+                currentCol = 0;
+            });
+            pause.play();
         }
     }
 
@@ -187,6 +188,7 @@ public class MainSceneController {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Lägg till ett ord i ordbanken");
         dialog.setContentText("Fem bokstäver, Gärna ett riktigt ord");
+        dialog.setHeaderText(null);
         dialog.showAndWait().ifPresent(word -> {
             try {
                 if (wc.addWord(word)) {
