@@ -1,4 +1,11 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Action;
@@ -10,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
@@ -41,6 +49,8 @@ public class MainSceneController {
 
     @FXML
     private Button cheatButton;
+    @FXML
+    private Button addWordButton;
 
     private Map<String, Button> letterToButton = new HashMap<>();
     private int currentRow = 0;
@@ -145,32 +155,50 @@ public class MainSceneController {
 
             String guessedWord = guessBuilder.toString().toLowerCase();
 
-            if (!WordCheck.getList().contains(guessedWord)) {
-                messageLabel.setText("Inte ett riktigt ord. Försök igen!");
+            if (!wc.getList().contains(guessedWord)) {
+                messageLabel.setText("Ordet finns inte i vår ordbank. Försök igen!");
                 return;
             }
-
             if (guessedWord.equals(hiddenWord)) {
                 messageLabel.setText("Rätt ord! Bra jobbat!");
                 // Add a small delay to change the color
                 applyColorWithDelay(currentRow, true, guessedWord);
             } else {
                 applyColorWithDelay(currentRow, false, guessedWord);
-                messageLabel.setText("Fel ord, försök igen!");
-            }
 
+                if (currentRow == 5) { // sista raden!
+                    messageLabel.setText("Du förlorade! Rätt ord var: " + hiddenWord.toUpperCase());
+                } else {
+                    messageLabel.setText("Fel ord, försök igen!");
+                }
+            }
             currentRow++;
             currentCol = 0;
-        }
-
-        if (currentRow == 6) {
-            messageLabel.setText(hiddenWord);
         }
     }
 
     @FXML
     private void handleCheat(ActionEvent event) {
         messageLabel.setText(hiddenWord.toUpperCase());
+    }
+
+    @FXML
+    private void handleAddWord(ActionEvent event) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Lägg till ett ord i ordbanken");
+        dialog.setContentText("Fem bokstäver, Gärna ett riktigt ord");
+        dialog.showAndWait().ifPresent(word -> {
+            try {
+                if (wc.addWord(word)) {
+                    messageLabel.setText("Ordet \"" + word + "\" har sparats!");
+                } else {
+                    messageLabel.setText("Ordet måste beståa v 5 bokstäver");
+                }
+            } catch (IOException e) {
+                messageLabel.setText("Fel uppstod");
+                e.printStackTrace();
+            }
+        });
     }
 
     private void updateKeyboardColors(String guessedWord) {
