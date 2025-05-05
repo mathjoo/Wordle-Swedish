@@ -1,20 +1,22 @@
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class WordCheck {
-    public static ArrayList<String> list = new ArrayList<>();
-    public String word;
+    private final ArrayList<String> list = new ArrayList<>();
+    private final String word;
 
     public WordCheck() throws Exception {
-        if (list.isEmpty()) {
-            read();
-        }
+        read();
         int ran = (int) (Math.random() * list.size());
-        word = list.get(ran);
+        this.word = list.get(ran);
     }
 
-    static void read() throws Exception {
+    private void read() throws Exception {
         File file = new File("lib/fem_bokstaver.txt");
         Scanner fileScanner = new Scanner(file);
 
@@ -28,12 +30,20 @@ public class WordCheck {
         return word;
     }
 
-    public static ArrayList<String> getList() {
-        return list;
+    public List<String> getList() {
+        return List.copyOf(list);
     }
 
     public boolean contains(String guessedWord) {
-        if (list.contains(guessedWord)) {
+        return list.contains(guessedWord);
+    }
+
+    public boolean addWord(String word) throws IOException {
+        word = word.trim().toLowerCase();
+        if (word.length() == 5 && word.matches("[a-zåäö]{5}")) {
+            Path path = Path.of("lib/fem_bokstaver.txt");
+            Files.write(path, List.of(word), java.nio.file.StandardOpenOption.APPEND);
+            list.add(word); // uppdatera även i minnet
             return true;
         }
         return false;
