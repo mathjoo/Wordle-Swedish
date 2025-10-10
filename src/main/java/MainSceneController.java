@@ -21,6 +21,13 @@ import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ButtonBar;
+import java.util.Optional;
+import javafx.application.Platform;
+
 
 public class MainSceneController {
 
@@ -57,6 +64,8 @@ public class MainSceneController {
     private int currentCol = 0;
     private WordCheck wc;
     private String hiddenWord;
+    private List<PauseTransition> activeTransitions = new ArrayList<>();
+
 
     @FXML
     public void initialize() {
@@ -165,8 +174,27 @@ public class MainSceneController {
             pause.setOnFinished(e -> {
                 if (guessedWord.equals(hiddenWord)) {
                     messageLabel.setText("Rätt ord! Bra jobbat!");
+
+                    Platform.runLater(() -> {
+                        boolean playAgain = AskPlayAgain();
+                        if (playAgain) {
+                            resetGame();
+                        } else {
+                            Stage stage = (Stage) messageLabel.getScene().getWindow();
+                            stage.close();
+                        }
+                    });
                 } else if (currentRow == 5) {
                     messageLabel.setText("Du förlorade! Rätt ord var: " + hiddenWord.toUpperCase());
+                    Platform.runLater(() -> {
+                        boolean playAgain = AskPlayAgain();
+                        if (playAgain) {
+                            resetGame();
+                        } else {
+                            Stage stage = (Stage) messageLabel.getScene().getWindow();
+                            stage.close();
+                        }
+                    });
                 } else {
                     messageLabel.setText("Fel ord, försök igen!");
                 }
@@ -187,14 +215,17 @@ public class MainSceneController {
     private void handleAddWord(ActionEvent event) {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Lägg till ett ord i ordbanken");
-        dialog.setContentText("Fem bokstäver, Gärna ett riktigt ord");
+        dialog.setContentText("Fem bokstäver, gärna ett riktigt ord");
         dialog.setHeaderText(null);
         dialog.showAndWait().ifPresent(word -> {
+            String cleanedWord = word.trim().toLowerCase();
             try {
-                if (wc.addWord(word)) {
+                if (wc.contains(cleanedWord)) {
+                    messageLabel.setText("Ordet \"" + word + "\" finns redan med.");
+                } else if (wc.addWord(cleanedWord)) {
                     messageLabel.setText("Ordet \"" + word + "\" har sparats!");
                 } else {
-                    messageLabel.setText("Ordet måste beståa v 5 bokstäver");
+                    messageLabel.setText("Ordet måste vara 5 bokstäver");
                 }
             } catch (IOException e) {
                 messageLabel.setText("Fel uppstod");
@@ -218,7 +249,7 @@ public class MainSceneController {
                 keyButton.setStyle("-fx-background-color: #6aaa64; -fx-text-fill: white;");
             }
         }
-        // Steg 2: markera bokstäver som gula (rätt bokstav, fel plats)
+
         for (int i = 0; i < 5; i++) {
             String letter = guessedWord.substring(i, i + 1);
             String upperLetter = letter.toUpperCase();
@@ -232,7 +263,7 @@ public class MainSceneController {
                 }
             }
         }
-        // Steg 3: markera bokstäver som inte finns alls (grå)
+        
         for (int i = 0; i < 5; i++) {
             String letter = guessedWord.substring(i, i + 1);
             String upperLetter = letter.toUpperCase();
@@ -248,6 +279,7 @@ public class MainSceneController {
     }
 
     private void applyColorWithDelay(int row, boolean correctGuess, String guessedWord) {
+        activeTransitions.clear();
         for (int i = 0; i < 5; i++) {
             final int col = i;
 
@@ -268,13 +300,52 @@ public class MainSceneController {
                     }
                 }
             });
-
+            activeTransitions.add(pause);
             pause.play();
         }
 
         PauseTransition finalPause = new PauseTransition(Duration.seconds(0.5 * 5 + 0.1));
         finalPause.setOnFinished(e -> updateKeyboardColors(guessedWord));
+        activeTransitions.add(finalPause);
         finalPause.play();
+    }
 
+    private void resetGame() {
+        for (PauseTransition pt : activeTransitions) {
+            pt.stop();
+        }
+        activeTransitions.clear();
+        for (int row = 0; row < 6; row++) {
+            for (int col = 0; col < 5; col++) {
+                board[row][col].setText("");
+                board[row][col].setStyle("-fx-background-color: white; -fx-text-fill: black; -fx-border-color: black; -fx-border-width: 1;");
+            }
+        }
+
+        for (Button btn: letterToButton.values()) {
+                btn.setStyle("");
+        }
+
+        messageLabel.setText("Välkommen till ett nytt spel!");
+
+        currentRow = 0;
+        currentCol = 0;
+
+        hiddenWord = wc.pickNewWord().toLowerCase();
+    }
+
+    private boolean AskPlayAgain() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Play Again?");
+        alert.setHeaderText("Vill du spela igen?");
+        alert.setContentText("Välj Ja för att spela igen, eller Nej för att avsluta.");
+
+        ButtonType yesButton = new ButtonType("Ja");
+        ButtonType noButton = new ButtonType("Nej", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(yesButton, noButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        return result.isPresent() && result.get() == yesButton;
     }
 }

@@ -7,13 +7,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class WordCheck {
-    private final ArrayList<String> list = new ArrayList<>();
-    private final String word;
+    public final ArrayList<String> list = new ArrayList<>();
+    private String word;
 
     public WordCheck() throws Exception {
         read();
-        int ran = (int) (Math.random() * list.size());
-        this.word = list.get(ran);
+        pickNewWord();
     }
 
     private void read() throws Exception {
@@ -30,6 +29,13 @@ public class WordCheck {
         return word;
     }
 
+    public String pickNewWord() {
+        int ran = (int) (Math.random() * list.size());
+        word = list.get(ran);
+        return word;
+    }
+
+
     public List<String> getList() {
         return List.copyOf(list);
     }
@@ -43,7 +49,7 @@ public class WordCheck {
         if (word.length() == 5 && word.matches("[a-zåäö]{5}")) {
             Path path = Path.of("lib/fem_bokstaver.txt");
             Files.write(path, List.of(word), java.nio.file.StandardOpenOption.APPEND);
-            list.add(word); // uppdatera även i minnet
+            list.add(word); 
             return true;
         }
         return false;

@@ -41,17 +41,17 @@ public class Main {
                 input = scanner.nextLine();
             } else if (input.equals(word)) {
                 System.out.println("Rätt ord! Du gissade " + input);
-                break;
+                input = scanner.nextLine();
             } else {
                 System.out.println("Fel ord, försök igen:");
                 input = scanner.nextLine();
             }
-        }
-        while ((input.length() != 5) || (!list.contains(input))) {
-            System.out.println("Ogiltigt ord, försök igen:");
-            input = scanner.nextLine();
-        }
-        scanner.close();
-    }
-}
 
+            while ((input.length() != 5) || (!list.contains(input))) {
+                System.out.println("Ogiltigt ord, försök igen:");
+                input = scanner.nextLine();
+            }
+            scanner.close();
+            }    
+        }       
+}
