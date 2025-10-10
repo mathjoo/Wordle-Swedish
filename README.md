@@ -20,6 +20,7 @@ A Swedish-language version of the popular Wordle game, built in **Java** with **
   - Letter input buttons
   - Enter button to submit a guess
   - Delete button to remove a letter
+- Option to play again if correct word guessed or ran out of tries
 
 ---
 
@@ -27,12 +28,14 @@ A Swedish-language version of the popular Wordle game, built in **Java** with **
 
 I worked primarily on the **user interface** and **game mechanics**, including:
 
-- Implementing the **GUI logic**:
-  - How button presses register letters
-  - Visual layout of letter boxes and keyboard
-  - Functionality for Enter and Delete buttons
-- Writing the **logic for color feedback** (matching guessed letters to the correct word)
-- Filtering the **Swedish word list** to allow only five-letter words
+- Implementing **GUI logic**:
+  - Handling button presses to register letters
+  - Designing the visual layout of letter boxes and keyboard
+  - Adding functionality for Enter and Delete buttons
+- Developing the **color feedback logic** to match guessed letters with the correct word
+- Filtering the **Swedish word list** to enforce five-letter words
+- Implementing the **Play Again** feature
+- Handling edge cases in the **Add New Word** function
 
 ---
 
@@ -40,13 +43,16 @@ I worked primarily on the **user interface** and **game mechanics**, including:
 
 Make sure you have **Java** and **Maven** installed.
 
-To run:
+To run: 
+
+1. Open a terminal and navigate to the main project directory.
+2. Build the project:
 
 ```bash
 mvn clean install
 ```
 
-and then
+3. Run the project:
 
 ```bash
 mvn exec:java
